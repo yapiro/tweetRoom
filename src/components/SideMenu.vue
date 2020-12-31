@@ -62,7 +62,7 @@ export default{
   font-size:14px;
 }
 .menu-list-title-link:hover,.router-link-exact-active .menu-list-title-link{
-  font-size:19px;
+  font-size:18px;
   background-color:#555;
   color:white;
   font-weight:bold;
