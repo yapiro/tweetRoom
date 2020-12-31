@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path:'/wisky',
+    path:'/',
     name:'Wisky',
     component:Wisky,
   },
