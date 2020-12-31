@@ -1,14 +1,38 @@
 <template>
   <aside class = "menu">
     <ul class ="menu-list">
-      <li class = "menu-list-title">ウイスキー</li>
-      <li class = "menu-list-title">旅</li>
-      <li class = "menu-list-title">筋トレ</li>
+      <template v-for="(menuData,index) in menuDataList">
+        <router-link :to="menuData.to" tag="li" class="menu-list-title" :key="index">
+          <a class="menu-list-title-link">{{menuData.title}}</a>
+        </router-link>
+      </template>
     </ul>
   </aside>
 </template>
 
 <script>
+const MENU_DATA_LIST=[
+  {
+    title:'ウイスキー',
+    to:{name:'Wisky'}
+  },
+  {
+    title:'旅',
+    to:{name:'Trip'}
+  },
+  {
+    title:'筋トレ',
+    to:{name:'Muscle'}
+  },
+]
+
+export default{
+  data(){
+    return{
+      menuDataList : MENU_DATA_LIST
+    }
+  }  
+}
 </script>
 
 <style>
@@ -31,7 +55,16 @@
     line-height:50px;
     margin:0 auto;
 }
-.menu-list-title:hover{
-    background-color:rgb(118, 115, 115);
+.menu-list-title-link{
+  text-align:center;
+  display:block;
+  color:black;
+  font-size:14px;
+}
+.menu-list-title-link:hover,.router-link-exact-active .menu-list-title-link{
+  font-size:18px;
+  background-color:#555;
+  color:white;
+  font-weight:bold;
 }
 </style>
